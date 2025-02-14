@@ -1,0 +1,16 @@
+[project]
+name = "materialize-example"
+version = "0.1.0"
+requires-python = ">=3.13"
+description = "Project to setup materialize"
+readme = "README.md"
+dependencies = [
+    "dbt-core>=1.8.8",
+    "dbt-materialize>=1.9.3",
+    "pulumi>=3.150.0",
+    "pulumi-command>=1.0.2",
+    "pulumi-docker>=4.6.1",
+    "pulumi-materialize>=0.3.13",
+    "pulumi-postgresql>=3.15.0",
+    "setuptools>=75.8.0",
+]

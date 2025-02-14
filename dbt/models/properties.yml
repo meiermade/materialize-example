@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: materialize
+    database: materialize
+    schema: public
+    tables:
+      - name: client
+      - name: account
+      - name: transaction
+
+models:
+  - name: account_balances
+    description: "Current balance of each account"
+    columns:
+      - name: account_id
+        data_tests: ['unique', 'not_null']
+      - name: balance
+        data_tests: ['not_null']

@@ -1,0 +1,13 @@
+﻿materialize_example:
+  target: prod
+  outputs:
+    prod:
+      type: materialize
+      host: localhost
+      port: 6875
+      sslmode: disable
+      user: materialize
+      password: ''
+      database: materialize
+      schema: prod
+      threads: 1

@@ -1,0 +1,8 @@
+name: materialize-example
+runtime:
+  name: python
+  options:
+    toolchain: uv
+    virtualenv: ../.venv
+main: main.py
+description: Pulumi project to setup materialize

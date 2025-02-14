@@ -1,0 +1,9 @@
+config:
+  pulumi:disable-default-providers: ['*']
+  postgres:user: sysadmin
+  postgres:password: changeit
+  postgres:database: app
+  postgres:materialize_user: materialize
+  postgres:materialize_password: changeit
+  materialize:user: materialize
+  materialize:database: materialize
