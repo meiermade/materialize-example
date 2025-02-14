@@ -39,6 +39,11 @@ cd pulumi
 pulumi up
 ```
 
+Run load data script
+```shell
+uv run load_data.py
+```
+
 Tear down
 ```shell
 cd pulumi

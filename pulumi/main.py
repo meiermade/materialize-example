@@ -160,7 +160,7 @@ postgres_materialize_user = Role(
     )
 )
 
-# grant connect on database app to materialize;
+# grant connect on database app to materialize
 grant_connect = Grant(
     "connect",
     args=GrantArgs(
@@ -172,7 +172,7 @@ grant_connect = Grant(
     opts=ResourceOptions(provider=postgres_provider)
 )
 
-# grant usage on schema app.public to materialize;
+# grant usage on schema app.public to materialize
 grant_usage = Grant(
     "usage",
     args=GrantArgs(
@@ -185,7 +185,7 @@ grant_usage = Grant(
     opts=ResourceOptions(provider=postgres_provider)
 )
 
-# grant select on table client, account, transaction to materialize;
+# grant select on table client, account, transaction to materialize
 grant_select = Grant(
     "select",
     args=GrantArgs(
@@ -283,4 +283,24 @@ dbt_build = Command(
         provider=command_provider,
         depends_on=[app_postgres_source]
     )
+)
+
+metabase_image = RemoteImage(
+    "metabase",
+    args=RemoteImageArgs(name="materialize/metabase:1.4.1"),
+    opts=ResourceOptions(provider=docker_provider)
+)
+
+metabase_container = Container(
+    "metabase",
+    args=ContainerArgs(
+        name="metabase",
+        image=metabase_image.image_id,
+        ports=[ContainerPortArgs(internal=3000, external=3000)],
+        network_mode="bridge",
+        networks_advanced=[
+            ContainerNetworksAdvancedArgs(name=network.name)
+        ]
+    ),
+    opts=ResourceOptions(provider=docker_provider)
 )
