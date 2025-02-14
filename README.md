@@ -1,5 +1,5 @@
-# Materialize Bugs
-Project to report bugs to Materialize
+# Materialize Example
+Example Materialize project.
 
 ## Setup
 Install uv
@@ -23,17 +23,18 @@ scoop install pulumi
 ```
 
 ## Usage
-Deploy Postgres and Materialize
+Deploy
 ```shell
 pulumi up
 ```
 
-Build dbt models
+Tear down
 ```shell
-dbt build
+pulumi destroy
 ```
 
 ## Setup PyCharm
 Create a Postgres database connection for materialize and select the following options.
-![database_expert_options.png](etc/database_expert_options.png)
-![select_database_expert_options.png](etc/select_database_expert_options.png)
+![pycharm_materialize_data_source.jpg](etc/pycharm_materialize_data_source.jpg)
+![pycharm_materialize_data_source_expert_options.jpg](etc/pycharm_materialize_data_source_expert_options.jpg)
+![pycharm_materialize_data_source_expert_options_select.jpg](etc/pycharm_materialize_data_source_expert_options_select.jpg)
