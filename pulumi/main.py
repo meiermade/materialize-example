@@ -237,7 +237,7 @@ app_postgres_password_secret = Secret(
     args=SecretArgs(value=POSTGRES_MATERIALIZE_PASSWORD),
     opts=ResourceOptions(
         provider=materialize_provider,
-        depends_on=[materialize_container]
+        depends_on=[materialize_container, run_migrations]
     )
 )
 
@@ -291,6 +291,12 @@ metabase_image = RemoteImage(
     opts=ResourceOptions(provider=docker_provider)
 )
 
+metabase_data_volume = Volume(
+    "metabase_data",
+    args=VolumeArgs(name="metabase_data"),
+    opts=ResourceOptions(provider=docker_provider)
+)
+
 metabase_container = Container(
     "metabase",
     args=ContainerArgs(
@@ -300,7 +306,16 @@ metabase_container = Container(
         network_mode="bridge",
         networks_advanced=[
             ContainerNetworksAdvancedArgs(name=network.name)
-        ]
+        ],
+        envs=[
+            "MB_DB_FILE=/metabase-data/metabase.db"
+        ],
+        volumes=[
+            ContainerVolumeArgs(
+                volume_name=metabase_data_volume.name,
+                container_path="/metabase-data",
+            )
+        ],
     ),
     opts=ResourceOptions(provider=docker_provider)
 )

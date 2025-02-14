@@ -32,17 +32,21 @@ Install Pulumi
 scoop install pulumi
 ```
 
-## Usage
 Deploy
 ```shell
 cd pulumi
 pulumi up
 ```
 
+Setup Metabase at http://localhost:3000
+![metabase.jpg](etc/metabase.jpg)
+![chart.jpg](etc/chart.jpg)
+
 Run load data script
 ```shell
 uv run load_data.py
 ```
+> Useful to see data updated in Metabase
 
 Tear down
 ```shell
