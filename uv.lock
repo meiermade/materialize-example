@@ -487,7 +487,7 @@ requires-dist = [
     { name = "pulumi", specifier = ">=3.150.0" },
     { name = "pulumi-command", specifier = ">=1.0.2" },
     { name = "pulumi-docker", specifier = ">=4.6.1" },
-    { name = "pulumi-materialize", specifier = ">=0.3.13" },
+    { name = "pulumi-materialize", specifier = ">=0.3.14" },
     { name = "pulumi-postgresql", specifier = ">=3.15.0" },
     { name = "setuptools", specifier = ">=75.8.0" },
     { name = "sqlalchemy", specifier = ">=2.0.38" },
@@ -688,14 +688,14 @@ wheels = [
 
 [[package]]
 name = "pulumi-materialize"
-version = "0.3.13"
+version = "0.3.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "parver" },
     { name = "pulumi" },
     { name = "semver" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/59/c8/65dc1e2909c16baa5fed46c779a77e8f5dc5aee20dc6cc030afeeb1a841f/pulumi_materialize-0.3.13.tar.gz", hash = "sha256:b7e19067b79e275058bfc920868ebf7599c9aa2332510808ef01ca877a5475bd", size = 126855 }
+sdist = { url = "https://files.pythonhosted.org/packages/e6/41/2892ce92b3c571ac41fc2f0f10c178bfcfa055e20e9be8fae31fc8c96e7c/pulumi_materialize-0.3.14.tar.gz", hash = "sha256:6969b616008951a214fb470e82b8de89da13672d762ae413429c656483e3a8f1", size = 136592 }
 
 [[package]]
 name = "pulumi-postgresql"
